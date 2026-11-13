@@ -1,0 +1,330 @@
+/*
+ * Opsburg Design System — Tailwind v4 theme
+ *
+ * Uso nel progetto consumer (dopo aver installato tailwindcss e tailwindcss-animate):
+ *
+ *   @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..700;1,300..700&display=swap");
+ *   @import "tailwindcss";
+ *   @import "@opsburg/design-system/theme.css";
+ *   @source "../node_modules/@opsburg/design-system/dist";
+ */
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+    --font-sans: "Montserrat", "system-ui", sans-serif;
+
+    --tracking-normal: 0.0125em;
+    --tracking-wide: 0.025em;
+
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-divider: hsl(var(--divider));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+    --color-foreground-secondary: hsl(var(--foreground-secondary));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-primary-active: hsl(var(--primary-active));
+    /* Il pumpkin pieno su bianco non regge il testo (2.5:1): per link e glifi si usa la variante strong */
+    --color-primary-strong: hsl(var(--primary-strong));
+
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-secondary-active: hsl(var(--secondary-active));
+
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-destructive-active: hsl(var(--destructive-active));
+
+    --color-success: hsl(var(--success));
+    --color-success-foreground: hsl(var(--success-foreground));
+    --color-success-subtle: hsl(var(--success-subtle));
+
+    --color-warning: hsl(var(--warning));
+    --color-warning-foreground: hsl(var(--warning-foreground));
+    --color-warning-subtle: hsl(var(--warning-subtle));
+
+    --color-info: hsl(var(--info));
+    --color-info-foreground: hsl(var(--info-foreground));
+    --color-info-subtle: hsl(var(--info-subtle));
+
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+    --color-accent-active: hsl(var(--accent-active));
+
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+
+    --color-sidebar: hsl(var(--sidebar-background));
+    --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+    --color-sidebar-primary: hsl(var(--sidebar-primary));
+    --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+    --color-sidebar-accent: hsl(var(--sidebar-accent));
+    --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+    --color-sidebar-border: hsl(var(--sidebar-border));
+    --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+    /*
+     * Palette di brand (coolors.co/palette/233d4d-fe7f2d-fcca46-a1c181-619b8a).
+     * Ogni hex originale e' un gradino della sua scala: charcoal-900, pumpkin-400,
+     * sunglow-200, olivine-400, zomp-500. Gli altri gradini sono derivati in OKLCH.
+     * Nei componenti si usano i token semantici; le scale servono a grafici e illustrazioni.
+     */
+    --color-charcoal-50: #EFF8FE;
+    --color-charcoal-100: #E4EFF6;
+    --color-charcoal-200: #D0DDE6;
+    --color-charcoal-300: #B7C7D2;
+    --color-charcoal-400: #9BAEBB;
+    --color-charcoal-500: #8096A4;
+    --color-charcoal-600: #637B8B;
+    --color-charcoal-700: #486172;
+    --color-charcoal-800: #2F4959;
+    --color-charcoal-900: #233D4D;
+    --color-charcoal-950: #07202D;
+    --color-pumpkin-50: #FFF4EF;
+    --color-pumpkin-100: #FEE8DC;
+    --color-pumpkin-200: #FECFB7;
+    --color-pumpkin-300: #FEAF84;
+    --color-pumpkin-400: #FE7F2D;
+    --color-pumpkin-500: #E4690A;
+    --color-pumpkin-600: #BC5503;
+    --color-pumpkin-700: #954203;
+    --color-pumpkin-800: #702F00;
+    --color-pumpkin-900: #502000;
+    --color-pumpkin-950: #331200;
+    --color-sunglow-50: #FEF6E3;
+    --color-sunglow-100: #FFEBBE;
+    --color-sunglow-200: #FCCA46;
+    --color-sunglow-300: #EEBD36;
+    --color-sunglow-400: #D3A312;
+    --color-sunglow-500: #B58C05;
+    --color-sunglow-600: #947206;
+    --color-sunglow-700: #755900;
+    --color-sunglow-800: #574201;
+    --color-sunglow-900: #3E2E00;
+    --color-sunglow-950: #261B01;
+    --color-olivine-50: #EBFFD8;
+    --color-olivine-100: #DAF9BC;
+    --color-olivine-200: #C7E7A8;
+    --color-olivine-300: #B0D191;
+    --color-olivine-400: #A1C181;
+    --color-olivine-500: #809E61;
+    --color-olivine-600: #67824A;
+    --color-olivine-700: #4F6635;
+    --color-olivine-800: #384C22;
+    --color-olivine-900: #263612;
+    --color-olivine-950: #142204;
+    --color-zomp-50: #E1FFF5;
+    --color-zomp-100: #CAF9EA;
+    --color-zomp-200: #B6E7D8;
+    --color-zomp-300: #9CD1C1;
+    --color-zomp-400: #80B8A7;
+    --color-zomp-500: #619B8A;
+    --color-zomp-600: #4C8474;
+    --color-zomp-700: #35695B;
+    --color-zomp-800: #204F42;
+    --color-zomp-900: #0F382E;
+    --color-zomp-950: #02231B;
+
+    --radius-lg: calc(var(--radius) + 2px);
+    --radius-md: var(--radius);
+    --radius-sm: calc(var(--radius) - 2px);
+    --radius-xs: calc(var(--radius) - 4px);
+
+    --shadow-button: var(--button-inner-shadow);
+    --shadow-button-active: var(--button-active-inner-shadow);
+    --shadow-button-lg: var(--button-lg-inner-shadow);
+    --shadow-button-lg-active: var(--button-lg-active-inner-shadow);
+    --shadow-input: var(--input-inner-shadow);
+    --shadow-input-lg: var(--input-lg-inner-shadow);
+    --shadow-card: 0 1px 4px rgba(7, 32, 45, 0.06), 0 1px 2px rgba(7, 32, 45, 0.04);
+    --shadow-card-hover: 0 12px 24px -12px rgba(7, 32, 45, 0.18), 0 0 12px rgba(7, 32, 45, 0.05);
+
+    --spacing-sidebar: var(--sidebar-height);
+
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-fade-in: fade-in 0.5s ease-out;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@layer base {
+    :root {
+        /* Opsburg brand: tema chiaro, testo charcoal, azione pumpkin */
+        --background: 0 0% 100%; /* #FFFFFF */
+        --background-gradient-from: 0 0% 100%; /* #FFFFFF */
+        --background-gradient-to: 22 100% 98%; /* #FFFAF7 */
+        --foreground: 203 37% 22%; /* #233D4D */
+        --foreground-secondary: 204 23% 36%; /* #486172 */
+        --card: 0 0% 100%; /* #FFFFFF */
+        --card-foreground: 203 37% 22%; /* #233D4D */
+        --popover: 0 0% 100%; /* #FFFFFF */
+        --popover-foreground: 203 37% 22%; /* #233D4D */
+        --primary: 24 99% 59%; /* #FE7F2D */
+        --primary-foreground: 201 73% 10%; /* #07202D */
+        --primary-active: 26 92% 47%; /* #E4690A */
+        --primary-strong: 27 97% 37%; /* #BC5503 */
+        --secondary: 156 31% 94%; /* #EAF4F0 */
+        --secondary-foreground: 163 42% 22%; /* #204F42 */
+        --secondary-active: 159 32% 88%; /* #D6EAE3 */
+        --muted: 206 33% 96%; /* #F1F5F8 */
+        --muted-foreground: 204 19% 42%; /* #566E7E */
+        --accent: 19 100% 97%; /* #FFF4EF */
+        --accent-foreground: 26 96% 30%; /* #954203 */
+        --accent-active: 21 94% 93%; /* #FEE8DC */
+        --destructive: 355 61% 48%; /* #C4303D */
+        --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+        --destructive-active: 354 63% 39%; /* #A12531 */
+        --success: 88 32% 30%; /* #4F6635 */
+        --success-foreground: 0 0% 100%; /* #FFFFFF */
+        --success-subtle: 88 52% 94%; /* #EFF7E6 */
+        --warning: 46 100% 23%; /* #755900 */
+        --warning-foreground: 0 0% 100%; /* #FFFFFF */
+        --warning-subtle: 42 93% 94%; /* #FEF6E3 */
+        --info: 164 33% 31%; /* #35695B */
+        --info-foreground: 0 0% 100%; /* #FFFFFF */
+        --info-subtle: 157 39% 94%; /* #E8F5F0 */
+        --border: 206 25% 89%; /* #DCE4EA */
+        --input: 205 25% 85%; /* #CFDAE2 */
+        --divider: 204 28% 93%; /* #E8EEF2 */
+        --sidebar-background: 0 0% 100%; /* #FFFFFF */
+        --sidebar-foreground: 204 23% 36%; /* #486172 */
+        --sidebar-primary: 24 99% 59%; /* #FE7F2D */
+        --sidebar-primary-foreground: 201 73% 10%; /* #07202D */
+        --sidebar-accent: 19 100% 97%; /* #FFF4EF */
+        --sidebar-accent-foreground: 26 96% 30%; /* #954203 */
+        --sidebar-border: 204 28% 93%; /* #E8EEF2 */
+        --ring: 24 99% 59% / 35%;
+
+        --radius: 0.75rem;
+        --font-sans: "Montserrat", "system-ui", sans-serif;
+
+        --sidebar-height: 100vh;
+        --sidebar-ring: 24 99% 59% / 35%;
+
+        /* Flat buttons/inputs: drop the embossed inner shadows */
+        --button-inner-shadow: none;
+        --button-lg-inner-shadow: none;
+        --button-active-inner-shadow: none;
+        --button-lg-active-inner-shadow: none;
+
+        --input-inner-shadow: none;
+        --input-lg-inner-shadow: none;
+    }
+
+    .dark {
+        /* Opsburg brand: tema scuro su charcoal, i colori della palette a piena saturazione */
+        --background: 201 48% 13%; /* #112631 */
+        --background-gradient-from: 201 48% 13%; /* #112631 */
+        --background-gradient-to: 202 46% 17%; /* #17303E */
+        --foreground: 38 44% 96%; /* #FAF7F2 */
+        --foreground-secondary: 204 23% 77%; /* #B7C7D2 */
+        --card: 200 44% 18%; /* #193441 */
+        --card-foreground: 38 44% 96%; /* #FAF7F2 */
+        --popover: 200 44% 18%; /* #193441 */
+        --popover-foreground: 38 44% 96%; /* #FAF7F2 */
+        --primary: 24 99% 59%; /* #FE7F2D */
+        --primary-foreground: 201 73% 10%; /* #07202D */
+        --primary-active: 21 98% 76%; /* #FEAF84 */
+        --primary-strong: 21 98% 76%; /* #FEAF84 */
+        --secondary: 178 35% 19%; /* #1F4140 */
+        --secondary-foreground: 161 80% 88%; /* #CAF9EA */
+        --secondary-active: 177 33% 24%; /* #28504E */
+        --muted: 201 40% 22%; /* #223F4F */
+        --muted-foreground: 204 19% 67%; /* #9BAEBB */
+        --accent: 22 42% 20%; /* #4A2E1E */
+        --accent-foreground: 20 97% 86%; /* #FECFB7 */
+        --accent-active: 22 45% 25%; /* #5C3823 */
+        --destructive: 357 83% 70%; /* #F2737A */
+        --destructive-foreground: 201 73% 10%; /* #07202D */
+        --destructive-active: 357 82% 78%; /* #F59BA0 */
+        --success: 90 34% 63%; /* #A1C181 */
+        --success-foreground: 201 73% 10%; /* #07202D */
+        --success-subtle: 131 22% 19%; /* #263B2A */
+        --warning: 44 97% 63%; /* #FCCA46 */
+        --warning-foreground: 201 73% 10%; /* #07202D */
+        --warning-subtle: 46 28% 18%; /* #3C3622 */
+        --info: 162 28% 61%; /* #80B8A7 */
+        --info-foreground: 201 73% 10%; /* #07202D */
+        --info-subtle: 178 36% 18%; /* #1D3D3C */
+        --border: 201 35% 25%; /* #2A4858 */
+        --input: 201 35% 28%; /* #2E4E5F */
+        --divider: 201 40% 22%; /* #223F4F */
+        --sidebar-background: 201 48% 13%; /* #112631 */
+        --sidebar-foreground: 204 23% 77%; /* #B7C7D2 */
+        --sidebar-primary: 24 99% 59%; /* #FE7F2D */
+        --sidebar-primary-foreground: 201 73% 10%; /* #07202D */
+        --sidebar-accent: 22 42% 20%; /* #4A2E1E */
+        --sidebar-accent-foreground: 20 97% 86%; /* #FECFB7 */
+        --sidebar-border: 201 40% 22%; /* #223F4F */
+        --ring: 24 99% 59% / 45%;
+        --sidebar-ring: 24 99% 59% / 45%;
+    }
+
+    * {
+        border-color: hsl(var(--border));
+    }
+
+    body {
+        background-color: hsl(var(--background));
+        background-image: linear-gradient(135deg, hsl(var(--background-gradient-from)) 0%, hsl(var(--background-gradient-to)) 100%);
+        background-attachment: fixed;
+        color: hsl(var(--foreground));
+        font-family: var(--font-sans);
+    }
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

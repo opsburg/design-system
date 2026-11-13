@@ -1,0 +1,20 @@
+import { cva } from "class-variance-authority"
+import { cn } from "@/utils/styleUtils"
+
+const baseStyle = `
+	text-primary-strong
+	font-semibold
+`
+
+export const selectLabelVariants = cva(cn(baseStyle), {
+    variants: {
+        layoutSize: {
+            default: "text-sm py-2 px-2",
+            sm: "text-xs px-[0.375rem] py-[0.375rem]",
+            lg: "text-base px-3 py-3"
+        }
+    },
+    defaultVariants: {
+        layoutSize: "default"
+    }
+})

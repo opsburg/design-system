@@ -1,0 +1,37 @@
+import * as TabsPrimitive from "@radix-ui/react-tabs"
+import type { VariantProps } from "class-variance-authority"
+import * as React from "react"
+
+import { TabsContext } from "@/components/ui/tabs/tabs"
+import { cn } from "@/utils/styleUtils"
+import { getTestId, type TestIdProps } from "@/utils/testIdUtils"
+import { tabsListVariants } from "./tabsListVariants"
+
+const TabsList = React.forwardRef<React.ComponentRef<typeof TabsPrimitive.List>, React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> & VariantProps<typeof tabsListVariants> & TestIdProps>(
+    ({ className, dataTestId, ...props }, ref) => {
+        const { layoutSize, tabsListPosition } = React.useContext(TabsContext)
+        const fullWidth = tabsListPosition === "fullWidth"
+
+        const getContainerClasses = () => {
+            switch (tabsListPosition) {
+                case "fullWidth":
+                    return "w-full"
+                case "start":
+                    return "flex align-center justify-start"
+                case "end":
+                    return "flex align-center justify-end"
+                case "center":
+                    return "flex align-center justify-center"
+            }
+        }
+
+        return (
+            <div className={getContainerClasses()}>
+                <TabsPrimitive.List ref={ref} className={cn(tabsListVariants({ layoutSize, fullWidth }), className)} {...props} data-testid={getTestId({ dataTestId, ...props })} />
+            </div>
+        )
+    }
+)
+TabsList.displayName = TabsPrimitive.List.displayName
+
+export { TabsList }
