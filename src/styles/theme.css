@@ -30,7 +30,7 @@
     --color-primary: hsl(var(--primary));
     --color-primary-foreground: hsl(var(--primary-foreground));
     --color-primary-active: hsl(var(--primary-active));
-    /* Il pumpkin pieno su bianco non regge il testo (2.5:1): per link e glifi si usa la variante strong */
+    /* L'ottone pieno non regge il testo sul chiaro (2.5:1): per link e glifi si usa la variante strong */
     --color-primary-strong: hsl(var(--primary-strong));
 
     --color-secondary: hsl(var(--secondary));
@@ -76,66 +76,66 @@
     --color-sidebar-ring: hsl(var(--sidebar-ring));
 
     /*
-     * Palette di brand (coolors.co/palette/233d4d-fe7f2d-fcca46-a1c181-619b8a).
-     * Ogni hex originale e' un gradino della sua scala: charcoal-900, pumpkin-400,
-     * sunglow-200, olivine-400, zomp-500. Gli altri gradini sono derivati in OKLCH.
-     * Nei componenti si usano i token semantici; le scale servono a grafici e illustrazioni.
+     * Palette di brand "Ottone e Notte", ricavata dal logo: notte #0A1E35, ottone #C9952A,
+     * rame #B4642E, crema #F6ECD3, verderame #2F8A78. Ogni hex di partenza e' un gradino della
+     * sua scala; gli altri gradini sono derivati in OKLab. Nei componenti si usano i token
+     * semantici; le scale servono a grafici e illustrazioni.
      */
-    --color-charcoal-50: #EFF8FE;
-    --color-charcoal-100: #E4EFF6;
-    --color-charcoal-200: #D0DDE6;
-    --color-charcoal-300: #B7C7D2;
-    --color-charcoal-400: #9BAEBB;
-    --color-charcoal-500: #8096A4;
-    --color-charcoal-600: #637B8B;
-    --color-charcoal-700: #486172;
-    --color-charcoal-800: #2F4959;
-    --color-charcoal-900: #233D4D;
-    --color-charcoal-950: #07202D;
-    --color-pumpkin-50: #FFF4EF;
-    --color-pumpkin-100: #FEE8DC;
-    --color-pumpkin-200: #FECFB7;
-    --color-pumpkin-300: #FEAF84;
-    --color-pumpkin-400: #FE7F2D;
-    --color-pumpkin-500: #E4690A;
-    --color-pumpkin-600: #BC5503;
-    --color-pumpkin-700: #954203;
-    --color-pumpkin-800: #702F00;
-    --color-pumpkin-900: #502000;
-    --color-pumpkin-950: #331200;
-    --color-sunglow-50: #FEF6E3;
-    --color-sunglow-100: #FFEBBE;
-    --color-sunglow-200: #FCCA46;
-    --color-sunglow-300: #EEBD36;
-    --color-sunglow-400: #D3A312;
-    --color-sunglow-500: #B58C05;
-    --color-sunglow-600: #947206;
-    --color-sunglow-700: #755900;
-    --color-sunglow-800: #574201;
-    --color-sunglow-900: #3E2E00;
-    --color-sunglow-950: #261B01;
-    --color-olivine-50: #EBFFD8;
-    --color-olivine-100: #DAF9BC;
-    --color-olivine-200: #C7E7A8;
-    --color-olivine-300: #B0D191;
-    --color-olivine-400: #A1C181;
-    --color-olivine-500: #809E61;
-    --color-olivine-600: #67824A;
-    --color-olivine-700: #4F6635;
-    --color-olivine-800: #384C22;
-    --color-olivine-900: #263612;
-    --color-olivine-950: #142204;
-    --color-zomp-50: #E1FFF5;
-    --color-zomp-100: #CAF9EA;
-    --color-zomp-200: #B6E7D8;
-    --color-zomp-300: #9CD1C1;
-    --color-zomp-400: #80B8A7;
-    --color-zomp-500: #619B8A;
-    --color-zomp-600: #4C8474;
-    --color-zomp-700: #35695B;
-    --color-zomp-800: #204F42;
-    --color-zomp-900: #0F382E;
-    --color-zomp-950: #02231B;
+    --color-notte-50: #F4F7FB;
+    --color-notte-100: #EAEDF1;
+    --color-notte-200: #D8DBDF;
+    --color-notte-300: #BCC1C8;
+    --color-notte-400: #9DA5B0;
+    --color-notte-500: #7F8A98;
+    --color-notte-600: #637080;
+    --color-notte-700: #475769;
+    --color-notte-800: #2D3E53;
+    --color-notte-900: #14273E;
+    --color-notte-950: #0A1E35;
+    --color-ottone-50: #FFF2B7;
+    --color-ottone-100: #FFE7A9;
+    --color-ottone-200: #FDD48F;
+    --color-ottone-300: #E6B968;
+    --color-ottone-400: #C9952A;
+    --color-ottone-500: #AE8022;
+    --color-ottone-600: #8D6718;
+    --color-ottone-700: #6E4F0E;
+    --color-ottone-800: #503805;
+    --color-ottone-900: #342301;
+    --color-ottone-950: #201300;
+    --color-rame-50: #FFEDD4;
+    --color-rame-100: #FFE2C7;
+    --color-rame-200: #FFCEAF;
+    --color-rame-300: #EEB28E;
+    --color-rame-400: #D79269;
+    --color-rame-500: #B4642E;
+    --color-rame-600: #A25926;
+    --color-rame-700: #804317;
+    --color-rame-800: #5F2E08;
+    --color-rame-900: #401A00;
+    --color-rame-950: #2A0C00;
+    --color-crema-50: #FFF6DE;
+    --color-crema-100: #F6ECD3;
+    --color-crema-200: #E3DAC3;
+    --color-crema-300: #C8C0AD;
+    --color-crema-400: #ABA494;
+    --color-crema-500: #8E897C;
+    --color-crema-600: #726E65;
+    --color-crema-700: #58554E;
+    --color-crema-800: #3F3D39;
+    --color-crema-900: #272624;
+    --color-crema-950: #171614;
+    --color-verderame-50: #DBFFF6;
+    --color-verderame-100: #CEF7EC;
+    --color-verderame-200: #B7E7DA;
+    --color-verderame-300: #96CEC0;
+    --color-verderame-400: #71B4A4;
+    --color-verderame-500: #4A9A88;
+    --color-verderame-600: #2F8A78;
+    --color-verderame-700: #186355;
+    --color-verderame-800: #06483D;
+    --color-verderame-900: #002F26;
+    --color-verderame-950: #001C16;
 
     --radius-lg: calc(var(--radius) + 2px);
     --radius-md: var(--radius);
@@ -148,8 +148,8 @@
     --shadow-button-lg-active: var(--button-lg-active-inner-shadow);
     --shadow-input: var(--input-inner-shadow);
     --shadow-input-lg: var(--input-lg-inner-shadow);
-    --shadow-card: 0 1px 4px rgba(7, 32, 45, 0.06), 0 1px 2px rgba(7, 32, 45, 0.04);
-    --shadow-card-hover: 0 12px 24px -12px rgba(7, 32, 45, 0.18), 0 0 12px rgba(7, 32, 45, 0.05);
+    --shadow-card: 0 1px 4px rgba(10, 30, 53, 0.06), 0 1px 2px rgba(10, 30, 53, 0.04);
+    --shadow-card-hover: 0 12px 24px -12px rgba(10, 30, 53, 0.18), 0 0 12px rgba(10, 30, 53, 0.05);
 
     --spacing-sidebar: var(--sidebar-height);
 
@@ -185,57 +185,57 @@
 
 @layer base {
     :root {
-        /* Opsburg brand: tema chiaro, testo charcoal, azione pumpkin */
-        --background: 0 0% 100%; /* #FFFFFF */
-        --background-gradient-from: 0 0% 100%; /* #FFFFFF */
-        --background-gradient-to: 22 100% 98%; /* #FFFAF7 */
-        --foreground: 203 37% 22%; /* #233D4D */
-        --foreground-secondary: 204 23% 36%; /* #486172 */
-        --card: 0 0% 100%; /* #FFFFFF */
-        --card-foreground: 203 37% 22%; /* #233D4D */
-        --popover: 0 0% 100%; /* #FFFFFF */
-        --popover-foreground: 203 37% 22%; /* #233D4D */
-        --primary: 24 99% 59%; /* #FE7F2D */
-        --primary-foreground: 201 73% 10%; /* #07202D */
-        --primary-active: 26 92% 47%; /* #E4690A */
-        --primary-strong: 27 97% 37%; /* #BC5503 */
-        --secondary: 156 31% 94%; /* #EAF4F0 */
-        --secondary-foreground: 163 42% 22%; /* #204F42 */
-        --secondary-active: 159 32% 88%; /* #D6EAE3 */
-        --muted: 206 33% 96%; /* #F1F5F8 */
-        --muted-foreground: 204 19% 42%; /* #566E7E */
-        --accent: 19 100% 97%; /* #FFF4EF */
-        --accent-foreground: 26 96% 30%; /* #954203 */
-        --accent-active: 21 94% 93%; /* #FEE8DC */
-        --destructive: 355 61% 48%; /* #C4303D */
+        /* Opsburg "Ottone e Notte": tema chiaro su crema, testo notte, azione ottone */
+        --background: 42 62% 96%; /* #FBF7EE */
+        --background-gradient-from: 42 62% 96%; /* #FBF7EE */
+        --background-gradient-to: 42 60% 91%; /* #F6EEDB */
+        --foreground: 212 68% 12%; /* #0A1E35 */
+        --foreground-secondary: 213 23% 30%; /* #3B4B5E */
+        --card: 43 100% 99%; /* #FFFDF8 */
+        --card-foreground: 212 68% 12%; /* #0A1E35 */
+        --popover: 43 100% 99%; /* #FFFDF8 */
+        --popover-foreground: 212 68% 12%; /* #0A1E35 */
+        --primary: 40 65% 48%; /* #C9952A */
+        --primary-foreground: 212 68% 12%; /* #0A1E35 */
+        --primary-active: 41 69% 57%; /* #DDAE48 */
+        --primary-strong: 41 79% 28%; /* #7E5A0F */
+        --secondary: 163 35% 92%; /* #E4F2EE */
+        --secondary-foreground: 168 56% 20%; /* #164F44 */
+        --secondary-active: 162 34% 86%; /* #D0E8E1 */
+        --muted: 41 42% 91%; /* #F2ECDF */
+        --muted-foreground: 213 16% 36%; /* #4E5B6B */
+        --accent: 26 76% 94%; /* #FBEDE2 */
+        --accent-foreground: 23 74% 27%; /* #7A3A12 */
+        --accent-active: 26 72% 87%; /* #F6DCC8 */
+        --destructive: 8 69% 39%; /* #A8321F */
         --destructive-foreground: 0 0% 100%; /* #FFFFFF */
-        --destructive-active: 354 63% 39%; /* #A12531 */
-        --success: 88 32% 30%; /* #4F6635 */
+        --destructive-active: 8 71% 32%; /* #8A2717 */
+        --success: 168 56% 27%; /* #1E6B5B */
         --success-foreground: 0 0% 100%; /* #FFFFFF */
-        --success-subtle: 88 52% 94%; /* #EFF7E6 */
-        --warning: 46 100% 23%; /* #755900 */
+        --success-subtle: 164 37% 92%; /* #E3F2EE */
+        --warning: 25 77% 34%; /* #9A4B14 */
         --warning-foreground: 0 0% 100%; /* #FFFFFF */
-        --warning-subtle: 42 93% 94%; /* #FEF6E3 */
-        --info: 164 33% 31%; /* #35695B */
+        --warning-subtle: 28 81% 94%; /* #FCEEE2 */
+        --info: 208 51% 35%; /* #2C5D88 */
         --info-foreground: 0 0% 100%; /* #FFFFFF */
-        --info-subtle: 157 39% 94%; /* #E8F5F0 */
-        --border: 206 25% 89%; /* #DCE4EA */
-        --input: 205 25% 85%; /* #CFDAE2 */
-        --divider: 204 28% 93%; /* #E8EEF2 */
-        --sidebar-background: 0 0% 100%; /* #FFFFFF */
-        --sidebar-foreground: 204 23% 36%; /* #486172 */
-        --sidebar-primary: 24 99% 59%; /* #FE7F2D */
-        --sidebar-primary-foreground: 201 73% 10%; /* #07202D */
-        --sidebar-accent: 19 100% 97%; /* #FFF4EF */
-        --sidebar-accent-foreground: 26 96% 30%; /* #954203 */
-        --sidebar-border: 204 28% 93%; /* #E8EEF2 */
-        --ring: 24 99% 59% / 35%;
+        --info-subtle: 210 47% 93%; /* #E6EEF6 */
+        --border: 42 45% 81%; /* #E4D7B8 */
+        --input: 42 41% 73%; /* #D6C59D */
+        --divider: 42 47% 87%; /* #EEE5D0 */
+        --sidebar-background: 43 100% 99%; /* #FFFDF8 */
+        --sidebar-foreground: 213 23% 30%; /* #3B4B5E */
+        --sidebar-primary: 40 65% 48%; /* #C9952A */
+        --sidebar-primary-foreground: 212 68% 12%; /* #0A1E35 */
+        --sidebar-accent: 43 66% 90%; /* #F6ECD3 */
+        --sidebar-accent-foreground: 40 80% 20%; /* #5C410A */
+        --sidebar-border: 42 47% 87%; /* #EEE5D0 */
+        --ring: 40 65% 48% / 40%;
 
         --radius: 0.75rem;
         --font-sans: "Montserrat", "system-ui", sans-serif;
 
         --sidebar-height: 100vh;
-        --sidebar-ring: 24 99% 59% / 35%;
+        --sidebar-ring: 40 65% 48% / 40%;
 
         /* Flat buttons/inputs: drop the embossed inner shadows */
         --button-inner-shadow: none;
@@ -248,52 +248,52 @@
     }
 
     .dark {
-        /* Opsburg brand: tema scuro su charcoal, i colori della palette a piena saturazione */
-        --background: 201 48% 13%; /* #112631 */
-        --background-gradient-from: 201 48% 13%; /* #112631 */
-        --background-gradient-to: 202 46% 17%; /* #17303E */
-        --foreground: 38 44% 96%; /* #FAF7F2 */
-        --foreground-secondary: 204 23% 77%; /* #B7C7D2 */
-        --card: 200 44% 18%; /* #193441 */
-        --card-foreground: 38 44% 96%; /* #FAF7F2 */
-        --popover: 200 44% 18%; /* #193441 */
-        --popover-foreground: 38 44% 96%; /* #FAF7F2 */
-        --primary: 24 99% 59%; /* #FE7F2D */
-        --primary-foreground: 201 73% 10%; /* #07202D */
-        --primary-active: 21 98% 76%; /* #FEAF84 */
-        --primary-strong: 21 98% 76%; /* #FEAF84 */
-        --secondary: 178 35% 19%; /* #1F4140 */
-        --secondary-foreground: 161 80% 88%; /* #CAF9EA */
-        --secondary-active: 177 33% 24%; /* #28504E */
-        --muted: 201 40% 22%; /* #223F4F */
-        --muted-foreground: 204 19% 67%; /* #9BAEBB */
-        --accent: 22 42% 20%; /* #4A2E1E */
-        --accent-foreground: 20 97% 86%; /* #FECFB7 */
-        --accent-active: 22 45% 25%; /* #5C3823 */
-        --destructive: 357 83% 70%; /* #F2737A */
-        --destructive-foreground: 201 73% 10%; /* #07202D */
-        --destructive-active: 357 82% 78%; /* #F59BA0 */
-        --success: 90 34% 63%; /* #A1C181 */
-        --success-foreground: 201 73% 10%; /* #07202D */
-        --success-subtle: 131 22% 19%; /* #263B2A */
-        --warning: 44 97% 63%; /* #FCCA46 */
-        --warning-foreground: 201 73% 10%; /* #07202D */
-        --warning-subtle: 46 28% 18%; /* #3C3622 */
-        --info: 162 28% 61%; /* #80B8A7 */
-        --info-foreground: 201 73% 10%; /* #07202D */
-        --info-subtle: 178 36% 18%; /* #1D3D3C */
-        --border: 201 35% 25%; /* #2A4858 */
-        --input: 201 35% 28%; /* #2E4E5F */
-        --divider: 201 40% 22%; /* #223F4F */
-        --sidebar-background: 201 48% 13%; /* #112631 */
-        --sidebar-foreground: 204 23% 77%; /* #B7C7D2 */
-        --sidebar-primary: 24 99% 59%; /* #FE7F2D */
-        --sidebar-primary-foreground: 201 73% 10%; /* #07202D */
-        --sidebar-accent: 22 42% 20%; /* #4A2E1E */
-        --sidebar-accent-foreground: 20 97% 86%; /* #FECFB7 */
-        --sidebar-border: 201 40% 22%; /* #223F4F */
-        --ring: 24 99% 59% / 45%;
-        --sidebar-ring: 24 99% 59% / 45%;
+        /* Opsburg "Ottone e Notte": tema scuro su notte, testo crema, azione ottone */
+        --background: 212 68% 12%; /* #0A1E35 */
+        --background-gradient-from: 212 68% 12%; /* #0A1E35 */
+        --background-gradient-to: 212 65% 16%; /* #0E2642 */
+        --foreground: 43 66% 90%; /* #F6ECD3 */
+        --foreground-secondary: 213 20% 82%; /* #C9D1DB */
+        --card: 215 63% 18%; /* #11294A */
+        --card-foreground: 43 66% 90%; /* #F6ECD3 */
+        --popover: 215 63% 18%; /* #11294A */
+        --popover-foreground: 43 66% 90%; /* #F6ECD3 */
+        --primary: 41 63% 54%; /* #D4A440 */
+        --primary-foreground: 212 68% 12%; /* #0A1E35 */
+        --primary-active: 42 71% 66%; /* #E6C06A */
+        --primary-strong: 42 71% 66%; /* #E6C06A */
+        --secondary: 177 53% 15%; /* #123B39 */
+        --secondary-foreground: 164 56% 84%; /* #BFEDE1 */
+        --secondary-active: 176 49% 19%; /* #194A47 */
+        --muted: 212 58% 20%; /* #15304F */
+        --muted-foreground: 213 20% 72%; /* #A9B6C6 */
+        --accent: 25 49% 15%; /* #3A2414 */
+        --accent-foreground: 26 82% 81%; /* #F6C9A6 */
+        --accent-active: 26 47% 20%; /* #4A2F1B */
+        --destructive: 8 83% 70%; /* #F28473 */
+        --destructive-foreground: 212 68% 12%; /* #0A1E35 */
+        --destructive-active: 8 84% 78%; /* #F6A497 */
+        --success: 165 45% 57%; /* #5FC2AA */
+        --success-foreground: 212 68% 12%; /* #0A1E35 */
+        --success-subtle: 173 53% 15%; /* #123A35 */
+        --warning: 25 81% 65%; /* #EE9B60 */
+        --warning-foreground: 212 68% 12%; /* #0A1E35 */
+        --warning-subtle: 26 43% 16%; /* #3A2617 */
+        --info: 208 59% 72%; /* #8FBBE2 */
+        --info-foreground: 212 68% 12%; /* #0A1E35 */
+        --info-subtle: 212 57% 19%; /* #152F4D */
+        --border: 213 49% 28%; /* #244369 */
+        --input: 213 46% 31%; /* #2A4B73 */
+        --divider: 213 54% 22%; /* #1A3557 */
+        --sidebar-background: 212 68% 12%; /* #0A1E35 */
+        --sidebar-foreground: 213 20% 82%; /* #C9D1DB */
+        --sidebar-primary: 41 63% 54%; /* #D4A440 */
+        --sidebar-primary-foreground: 212 68% 12%; /* #0A1E35 */
+        --sidebar-accent: 43 45% 16%; /* #3A3016 */
+        --sidebar-accent-foreground: 42 71% 66%; /* #E6C06A */
+        --sidebar-border: 213 54% 22%; /* #1A3557 */
+        --ring: 41 63% 54% / 45%;
+        --sidebar-ring: 41 63% 54% / 45%;
     }
 
     * {

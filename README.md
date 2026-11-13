@@ -43,27 +43,27 @@ In the app's main CSS:
 
 ## Palette and tokens
 
-The palette is [233D4D · FE7F2D · FCCA46 · A1C181 · 619B8A](https://coolors.co/palette/233d4d-fe7f2d-fcca46-a1c181-619b8a). Each color is exposed as a Tailwind 50–950 scale, with the original hex anchored to one step:
+The palette is **Ottone e Notte** (brass and night), taken from the logo. Each color is exposed as a Tailwind 50–950 scale, with the original hex anchored to one step:
 
-| Color | Hex | Step | Role |
-| --- | --- | --- | --- |
-| `charcoal` | `#233D4D` | 900 | text, dark theme surfaces |
-| `pumpkin` | `#FE7F2D` | 400 | primary action (`primary`) |
-| `sunglow` | `#FCCA46` | 200 | `warning`, highlights |
-| `olivine` | `#A1C181` | 400 | `success` |
-| `zomp` | `#619B8A` | 500 | `secondary`, `info` |
+| Color | Hex | Role |
+| --- | --- | --- |
+| `notte` | `#0A1E35` | text on light, dark theme surfaces |
+| `ottone` | `#C9952A` | primary action (`primary`) |
+| `rame` | `#B4642E` | accent, illustrations, warnings |
+| `crema` | `#F6ECD3` | light surfaces, text on dark |
+| `verderame` | `#2F8A78` | `secondary`, `success` |
 
-Components use **semantic tokens only**; the scales (`bg-pumpkin-100`, `text-zomp-700`, …) are for charts and illustrations.
+Components use **semantic tokens only**; the scales (`bg-ottone-100`, `text-verderame-700`, …) are for charts and illustrations.
 
 | Token | Use |
 | --- | --- |
-| `primary` / `primary-foreground` | primary button fill, with charcoal text on top |
+| `primary` / `primary-foreground` | primary button fill, with notte text on top |
 | `primary-strong` | primary as **text or glyph** on `background`/`card` (links, ghost buttons, icons) |
 | `secondary`, `accent`, `muted` | soft surfaces and their `-foreground` |
 | `destructive` | errors and destructive actions |
 | `success`, `warning`, `info` | outcomes and states: `text-success` for text, `bg-success-subtle` for the background, `success-foreground` on a solid `bg-success` |
 
-Solid pumpkin on white has a 2.5:1 contrast: **do not use `text-primary` for text**, use `text-primary-strong`. Every text/background token pair meets WCAG AA (≥ 4.5:1) in both themes.
+Solid brass on the light background has a 2.5:1 contrast: **do not use `text-primary` for text**, use `text-primary-strong`. Every text/background token pair meets WCAG AA (≥ 4.5:1) in both themes: the lowest is 5.4:1 in light and 5.8:1 in dark.
 
 ## Usage
 
