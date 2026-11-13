@@ -175,7 +175,7 @@ Rules for every component:
 
 ## Storybook
 
-Published at **[opsburg.github.io/design-system](https://opsburg.github.io/design-system/)** on every push to `main`.
+Published at **[opsburg.dev/design-system](https://opsburg.dev/design-system/)** on every push to `main`.
 
 ```sh
 pnpm storybook          # http://localhost:6006
