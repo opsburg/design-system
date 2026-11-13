@@ -17,7 +17,7 @@ const SelectScrollUpButton = React.forwardRef<React.ComponentRef<typeof SelectPr
         <SelectPrimitive.ScrollUpButton
             ref={ref}
             aria-hidden="true"
-            className={cn(baseStyle, "shadow-[0_2px_4px_rgba(7,32,45,0.125)]", className)}
+            className={cn(baseStyle, "shadow-[0_2px_4px_rgba(10,30,53,0.125)]", className)}
             {...props}
             data-testid={getTestId({ dataTestId, ...props })}
         >
@@ -32,7 +32,7 @@ const SelectScrollDownButton = React.forwardRef<React.ComponentRef<typeof Select
         <SelectPrimitive.ScrollDownButton
             ref={ref}
             aria-hidden="true"
-            className={cn(baseStyle, "shadow-[0_-2px_4px_rgba(7,32,45,0.125)]", className)}
+            className={cn(baseStyle, "shadow-[0_-2px_4px_rgba(10,30,53,0.125)]", className)}
             {...props}
             data-testid={getTestId({ dataTestId, ...props })}
         >

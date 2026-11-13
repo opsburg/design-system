@@ -25,7 +25,7 @@ then:
 
 ```sh
 pnpm add @opsburg/design-system
-pnpm add -D tailwindcss @tailwindcss/vite tailwindcss-animate
+pnpm add -D tailwindcss @tailwindcss/vite
 ```
 
 ## Tailwind v4 setup
@@ -33,13 +33,12 @@ pnpm add -D tailwindcss @tailwindcss/vite tailwindcss-animate
 In the app's main CSS:
 
 ```css
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..700;1,300..700&display=swap");
 @import "tailwindcss";
 @import "@opsburg/design-system/theme.css";
 @source "../node_modules/@opsburg/design-system/dist";
 ```
 
-`@source` makes Tailwind generate the utilities the library components use. Dark mode is class based: toggle the `dark` class on `<html>`.
+`@source` makes Tailwind generate the utilities the library components use. The fonts (Cinzel, IBM Plex Sans, IBM Plex Mono, SIL OFL 1.1) ship in the package and are loaded by `theme.css`: nothing to import from Google Fonts. Dark mode is class based: toggle the `dark` class on `<html>`.
 
 ## Palette and tokens
 
@@ -64,6 +63,35 @@ Components use **semantic tokens only**; the scales (`bg-ottone-100`, `text-verd
 | `success`, `warning`, `info` | outcomes and states: `text-success` for text, `bg-success-subtle` for the background, `success-foreground` on a solid `bg-success` |
 
 Solid brass on the light background has a 2.5:1 contrast: **do not use `text-primary` for text**, use `text-primary-strong`. Every text/background token pair meets WCAG AA (≥ 4.5:1) in both themes: the lowest is 5.4:1 in light and 5.8:1 in dark.
+
+## Type, shape and depth
+
+| Token | Value | Use |
+| --- | --- | --- |
+| `font-display` | Cinzel | names only: the city, districts, buildings, titles, plaques. Never a sentence |
+| `font-sans` | IBM Plex Sans | every sentence, label and button |
+| `font-mono` | IBM Plex Mono | versions, images, logs, numbers |
+
+Each text style exists as `text-<style>` (size, line height, weight, tracking) and as `type-<style>` (the same plus its family; `type-plaque` is also uppercase):
+
+| Style | Size / line | Weight | Family |
+| --- | --- | --- | --- |
+| `title-xl` | 40 / 44 | 700 | display |
+| `title` | 24 / 30 | 700 | display |
+| `plaque` | 12 / 16, tracking 0.14em | 700 | display |
+| `heading` | 18 / 26 | 600 | sans |
+| `body` | 15 / 22 | 400 | sans |
+| `label` | 13 / 18 | 500 | sans |
+| `caption` | 12 / 16 | 400 | sans |
+| `code` | 13 / 20 | 400 | mono |
+| `gauge` | 20 / 24 | 500 | mono |
+
+- **Radius:** `rounded-xs` 2px, `rounded-sm` 4px (badges, inputs), `rounded-md` 6px (buttons, cards), `rounded-lg` 10px (dialogs, rails), `rounded-full` only for lamps and progress tracks.
+- **Shadows:** `shadow-card`, `shadow-card-hover`, `shadow-dialog`, `shadow-well` (inputs and log tapes, pressed in) and `shadow-bevel`, which only the primary button uses. Each has its own value in the dark theme.
+- **Spacing:** Tailwind's scale (`p-1` = 4px). The system uses 4, 8, 12, 16, 24 and 32px; `--space-1` … `--space-8` carry the same values for CSS outside Tailwind.
+- **Focus:** a 2px solid `ring` (`ring-2 ring-ring ring-offset-2`), at least 3:1 on every surface in both themes.
+
+Every token is also published as data in `@opsburg/design-system/tokens.json` (colors per theme, type, spacing, radius, shadows), for tools and pages that do not use Tailwind.
 
 ## Usage
 

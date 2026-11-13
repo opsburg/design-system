@@ -20,7 +20,7 @@ const baseStyle = `
 
 const focusStyle = `
 	focus-visible:outline-none 
-	focus-visible:ring-4 
+	focus-visible:ring-2 
 	focus-visible:ring-ring 
 	focus-visible:ring-offset-2
 `
@@ -44,7 +44,7 @@ export const ButtonVariants = cva(cn(baseStyle, focusStyle, disabledStyle, iconS
     variants: {
         variant: {
             primary: `
-				bg-primary text-primary-foreground
+				bg-primary text-primary-foreground border-primary-strong shadow-bevel
 				hover:bg-primary/85
 				focus-visible:bg-primary/85
 				active:bg-primary-active
@@ -78,7 +78,7 @@ export const ButtonVariants = cva(cn(baseStyle, focusStyle, disabledStyle, iconS
 				border-0 shadow-none text-primary-strong underline underline-offset-4 
 				hover:text-primary-strong/75
 				focus-visible:text-primary-strong/75
-				active:ring-4 active:ring-ring active:ring-offset-2 active:shadow-none
+				active:ring-2 active:ring-ring active:ring-offset-2 active:shadow-none
 				`,
             "ghost-destructive": `
 				border-0 shadow-none text-destructive

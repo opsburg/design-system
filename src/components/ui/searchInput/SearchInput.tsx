@@ -49,7 +49,7 @@ export const SearchInput = React.forwardRef<HTMLInputElement, ISearchInputProps>
                         size="icon-sm"
                         onClick={onClear}
                         aria-label={clearLabel}
-                        // Il focus ring del Button (ring-4 con offset) deborderebbe dal bordo del campo:
+                        // Il focus ring del Button (ring-2 con offset) deborderebbe dal bordo del campo:
                         // dentro l'input resta a ring-2 senza offset. Il grigio distingue la X dal testo digitato.
                         className="absolute right-2 top-1/2 -translate-y-1/2 rounded-sm text-foreground-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-offset-0"
                         dataTestId={testId && `${testId}-clear`}

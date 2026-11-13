@@ -3,7 +3,7 @@
  *
  * Uso nel progetto consumer (dopo aver installato tailwindcss e tailwindcss-animate):
  *
- *   @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..700;1,300..700&display=swap");
+ *   (i font Cinzel, IBM Plex Sans e IBM Plex Mono sono inclusi nel pacchetto, sotto dist/fonts)
  *   @import "tailwindcss";
  *   @import "@opsburg/design-system/theme.css";
  *   @source "../node_modules/@opsburg/design-system/dist";
@@ -13,8 +13,54 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Fonts: Cinzel per i nomi, IBM Plex Sans per il testo, IBM Plex Mono per versioni, log e numeri (SIL OFL 1.1) */
+@font-face { font-family: "Cinzel"; src: url("./fonts/Cinzel-Variable.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("./fonts/IBMPlexSans-Variable.woff2") format("woff2"); font-weight: 100 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("./fonts/IBMPlexMono-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "IBM Plex Mono"; src: url("./fonts/IBMPlexMono-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+
 @theme inline {
-    --font-sans: "Montserrat", "system-ui", sans-serif;
+    --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-display: Cinzel, Georgia, "Times New Roman", serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    /* Scala tipografica: text-<stile> imposta corpo, interlinea, peso e spaziatura; type-<stile> anche la famiglia */
+    --text-title-xl: 40px;
+    --text-title-xl--line-height: 44px;
+    --text-title-xl--font-weight: 700;
+    --text-title-xl--letter-spacing: 0.02em;
+    --text-title: 24px;
+    --text-title--line-height: 30px;
+    --text-title--font-weight: 700;
+    --text-title--letter-spacing: 0.02em;
+    --text-plaque: 12px;
+    --text-plaque--line-height: 16px;
+    --text-plaque--font-weight: 700;
+    --text-plaque--letter-spacing: 0.14em;
+    --text-heading: 18px;
+    --text-heading--line-height: 26px;
+    --text-heading--font-weight: 600;
+    --text-heading--letter-spacing: 0;
+    --text-body: 15px;
+    --text-body--line-height: 22px;
+    --text-body--font-weight: 400;
+    --text-body--letter-spacing: 0;
+    --text-label: 13px;
+    --text-label--line-height: 18px;
+    --text-label--font-weight: 500;
+    --text-label--letter-spacing: 0;
+    --text-caption: 12px;
+    --text-caption--line-height: 16px;
+    --text-caption--font-weight: 400;
+    --text-caption--letter-spacing: 0.01em;
+    --text-code: 13px;
+    --text-code--line-height: 20px;
+    --text-code--font-weight: 400;
+    --text-code--letter-spacing: 0;
+    --text-gauge: 20px;
+    --text-gauge--line-height: 24px;
+    --text-gauge--font-weight: 500;
+    --text-gauge--letter-spacing: 0;
 
     --tracking-normal: 0.0125em;
     --tracking-wide: 0.025em;
@@ -137,10 +183,11 @@
     --color-verderame-900: #002F26;
     --color-verderame-950: #001C16;
 
-    --radius-lg: calc(var(--radius) + 2px);
-    --radius-md: var(--radius);
-    --radius-sm: calc(var(--radius) - 2px);
-    --radius-xs: calc(var(--radius) - 4px);
+    /* Angoli lavorati a macchina: sm per badge e input, md per bottoni e card, lg per dialog e rail; rounded-full solo per lampade e barre */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
 
     --shadow-button: var(--button-inner-shadow);
     --shadow-button-active: var(--button-active-inner-shadow);
@@ -148,8 +195,12 @@
     --shadow-button-lg-active: var(--button-lg-active-inner-shadow);
     --shadow-input: var(--input-inner-shadow);
     --shadow-input-lg: var(--input-lg-inner-shadow);
-    --shadow-card: 0 1px 4px rgba(10, 30, 53, 0.06), 0 1px 2px rgba(10, 30, 53, 0.04);
-    --shadow-card-hover: 0 12px 24px -12px rgba(10, 30, 53, 0.18), 0 0 12px rgba(10, 30, 53, 0.05);
+    /* Ombre di ottone e fuliggine, mai bagliori: la bisellatura solo sul bottone primario, il pozzetto su input e nastri */
+    --shadow-card: var(--card-shadow);
+    --shadow-card-hover: var(--card-shadow-hover);
+    --shadow-dialog: var(--dialog-shadow);
+    --shadow-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -2px 0 rgba(10, 30, 53, 0.22);
+    --shadow-well: var(--well-shadow);
 
     --spacing-sidebar: var(--sidebar-height);
 
@@ -229,13 +280,26 @@
         --sidebar-accent: 43 66% 90%; /* #F6ECD3 */
         --sidebar-accent-foreground: 40 80% 20%; /* #5C410A */
         --sidebar-border: 42 47% 87%; /* #EEE5D0 */
-        --ring: 40 65% 48% / 40%;
+        --ring: 41 79% 28%; /* #7E5A0F: anello di focus solido, almeno 3:1 su ogni superficie */
 
-        --radius: 0.75rem;
-        --font-sans: "Montserrat", "system-ui", sans-serif;
+        --radius: 6px;
+        --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+        --card-shadow: 0 1px 2px rgba(10, 30, 53, 0.08), 0 4px 12px -6px rgba(10, 30, 53, 0.12);
+        --card-shadow-hover: 0 12px 24px -12px rgba(10, 30, 53, 0.2), 0 2px 6px rgba(10, 30, 53, 0.06);
+        --dialog-shadow: 0 24px 48px -16px rgba(10, 30, 53, 0.35);
+        --well-shadow: inset 0 1px 2px rgba(10, 30, 53, 0.12);
+
+        /* Spaziatura: la scala di Tailwind (p-1 = 4px) copre space-1..space-8; queste servono a chi non usa Tailwind */
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-6: 24px;
+        --space-8: 32px;
 
         --sidebar-height: 100vh;
-        --sidebar-ring: 40 65% 48% / 40%;
+        --sidebar-ring: 41 79% 28%; /* #7E5A0F */
 
         /* Flat buttons/inputs: drop the embossed inner shadows */
         --button-inner-shadow: none;
@@ -292,8 +356,13 @@
         --sidebar-accent: 43 45% 16%; /* #3A3016 */
         --sidebar-accent-foreground: 42 71% 66%; /* #E6C06A */
         --sidebar-border: 213 54% 22%; /* #1A3557 */
-        --ring: 41 63% 54% / 45%;
-        --sidebar-ring: 41 63% 54% / 45%;
+        --ring: 41 72% 66%; /* #E6C06A: anello di focus solido */
+        --sidebar-ring: 41 72% 66%; /* #E6C06A */
+
+        --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 16px -8px rgba(0, 0, 0, 0.5);
+        --card-shadow-hover: 0 12px 24px -12px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3);
+        --dialog-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.7);
+        --well-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.45);
     }
 
     * {
@@ -307,6 +376,72 @@
         color: hsl(var(--foreground));
         font-family: var(--font-sans);
     }
+}
+
+/* Stili di testo completi. Cinzel solo per i nomi (citta, distretti, edifici, titoli, targhette), mai per una frase. */
+@utility type-title-xl {
+    font-family: var(--font-display);
+    font-size: 40px;
+    line-height: 44px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+@utility type-title {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+@utility type-plaque {
+    font-family: var(--font-display);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+@utility type-heading {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+@utility type-body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+@utility type-label {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+@utility type-caption {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+@utility type-code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+@utility type-gauge {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
 }
 
 .loader {

@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs"
+import { readdirSync, readFileSync } from "node:fs"
 import { resolve } from "node:path"
 import react from "@vitejs/plugin-react-swc"
 import { defineConfig } from "vite"
@@ -20,6 +20,17 @@ export default defineConfig({
                     type: "asset",
                     fileName: "theme.css",
                     source: readFileSync(resolve(import.meta.dirname, "src/styles/theme.css"), "utf-8")
+                })
+                // theme.css loads the fonts from ./fonts, next to it in dist/
+                const fontsDir = resolve(import.meta.dirname, "src/styles/fonts")
+                for (const file of readdirSync(fontsDir)) {
+                    this.emitFile({ type: "asset", fileName: `fonts/${file}`, source: readFileSync(resolve(fontsDir, file)) })
+                }
+                // Every token as data, for consumers that do not use Tailwind
+                this.emitFile({
+                    type: "asset",
+                    fileName: "tokens.json",
+                    source: readFileSync(resolve(import.meta.dirname, "src/tokens.json"), "utf-8")
                 })
             }
         }

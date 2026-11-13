@@ -20,6 +20,8 @@
             "import": "./dist/index.js"
         },
         "./theme.css": "./dist/theme.css",
+        "./tokens.json": "./dist/tokens.json",
+        "./fonts/*": "./dist/fonts/*",
         "./package.json": "./package.json"
     },
     "sideEffects": [
@@ -63,12 +65,14 @@
         "lucide-react": "^1.30.0",
         "react-day-picker": "^10.0.1",
         "react-pick-color": "^2.1.0",
-        "tailwind-merge": "^3.6.0"
+        "tailwind-merge": "^3.6.0",
+        "tailwindcss-animate": "1.0.7"
     },
     "peerDependencies": {
         "react": "^18.0.0 || ^19.0.0",
         "react-dom": "^18.0.0 || ^19.0.0",
-        "react-hook-form": "^7.0.0"
+        "react-hook-form": "^7.0.0",
+        "tailwindcss": "^4.0.0"
     },
     "devDependencies": {
         "@biomejs/biome": "^2.5.7",
@@ -82,6 +86,7 @@
         "react-hook-form": "^7.84.0",
         "typescript": "^7.0.2",
         "vite": "^8.2.1",
-        "vite-plugin-dts": "^5.0.3"
+        "vite-plugin-dts": "^5.0.3",
+        "tailwindcss": "4.1.11"
     }
 }
