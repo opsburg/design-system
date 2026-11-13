@@ -78,7 +78,7 @@ export const LogLine = memo<ILogLineProps>(({ line, formatJson }) => {
 
     return (
         <details className="block">
-            <summary className="cursor-pointer list-none hover:bg-background/60 [&::-webkit-details-marker]:hidden">
+            <summary className="block min-h-6 cursor-pointer list-none hover:bg-background/60 [&::-webkit-details-marker]:hidden">
                 <Timestamp value={line.timestamp} />
                 {level && <span className={cn("font-semibold uppercase", levelClass(level))}>{level} </span>}
                 {message !== undefined && <span>{fieldText(message)} </span>}

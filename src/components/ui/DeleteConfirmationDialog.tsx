@@ -25,7 +25,7 @@ export function DeleteConfirmationDialog({
     onCancel,
     id,
     dataTestId,
-    title = "Delete Confirmation",
+    title = "Delete confirmation",
     description = "Are you sure you want to delete",
     cancelLabel = "Cancel",
     deleteLabel = "Delete",

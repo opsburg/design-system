@@ -8,9 +8,14 @@ type SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> &
     TestIdProps & {
         /** Etichetta accessibile dei thumb: una stringa per tutti, o una per thumb */
         thumbAriaLabel?: string | string[]
+        /**
+         * ARIA che appartiene al controllo, cioè ai thumb (role="slider") e non al contenitore:
+         * descrizione, errore e valore leggibile
+         */
+        thumbAriaProps?: Pick<React.AriaAttributes, "aria-describedby" | "aria-invalid" | "aria-valuetext">
     }
 
-const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>, SliderProps>(({ className, thumbAriaLabel, dataTestId, ...props }, ref) => {
+const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>, SliderProps>(({ className, thumbAriaLabel, thumbAriaProps, dataTestId, ...props }, ref) => {
     const testId = getTestId({ dataTestId, ...props })
 
     return (
@@ -28,6 +33,7 @@ const Slider = React.forwardRef<React.ComponentRef<typeof SliderPrimitive.Root>,
                     // i thumb sono posizionali: l'indice e' l'unica identita stabile
                     key={index}
                     aria-label={Array.isArray(thumbAriaLabel) ? thumbAriaLabel[index] : thumbAriaLabel}
+                    {...thumbAriaProps}
                     data-testid={testId ? `${testId}-thumb-${index}` : undefined}
                     className="block h-5 w-5 cursor-grab rounded-full border-2 border-primary bg-background shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:cursor-grabbing disabled:pointer-events-none"
                 />

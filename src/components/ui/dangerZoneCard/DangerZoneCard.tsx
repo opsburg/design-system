@@ -39,7 +39,7 @@ export interface IDangerZoneCardProps extends TestIdProps {
  * azioni che confermano altrove (o che non confermano affatto).
  */
 export const DangerZoneCard: React.FC<IDangerZoneCardProps> = ({
-    title = "Danger Zone",
+    title = "Danger zone",
     description = "Irreversible actions. Proceed with caution.",
     titleAs = "h2",
     actionTitle = "Delete",

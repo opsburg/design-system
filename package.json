@@ -40,7 +40,10 @@
         "dev": "vite build --watch",
         "typecheck": "tsc --noEmit",
         "lint": "biome lint --write ./src",
-        "format": "biome format --write ./src"
+        "format": "biome format --write ./src",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build -o storybook-static",
+        "test:a11y": "node scripts/a11y.mjs"
     },
     "dependencies": {
         "@radix-ui/react-accordion": "^1.2.20",
@@ -75,18 +78,25 @@
         "tailwindcss": "^4.0.0"
     },
     "devDependencies": {
+        "@axe-core/playwright": "4.14.0",
         "@biomejs/biome": "^2.5.7",
+        "@storybook/addon-a11y": "10.6.5",
+        "@storybook/addon-docs": "10.6.5",
+        "@storybook/react-vite": "10.6.5",
+        "@tailwindcss/vite": "4.1.11",
         "@types/node": "^26.1.2",
         "@types/react": "^19.2.18",
         "@types/react-dom": "^19.2.4",
         "@typescript/typescript6": "^6.0.2",
         "@vitejs/plugin-react-swc": "^4.3.3",
+        "playwright": "1.64.1",
         "react": "^19.2.8",
         "react-dom": "^19.2.8",
         "react-hook-form": "^7.84.0",
+        "storybook": "10.6.5",
+        "tailwindcss": "4.1.11",
         "typescript": "^7.0.2",
         "vite": "^8.2.1",
-        "vite-plugin-dts": "^5.0.3",
-        "tailwindcss": "4.1.11"
+        "vite-plugin-dts": "^5.0.3"
     }
 }

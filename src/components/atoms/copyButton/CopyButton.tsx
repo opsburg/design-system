@@ -70,6 +70,7 @@ export const CopyButton = React.forwardRef<HTMLButtonElement, ICopyButtonProps>(
         const currentLabel = copied ? copiedLabel : label
 
         return (
+            <>
             <Button
                 {...props}
                 ref={ref}
@@ -86,10 +87,12 @@ export const CopyButton = React.forwardRef<HTMLButtonElement, ICopyButtonProps>(
             >
                 {copied ? <Check /> : <Copy />}
                 {showLabel && <span className="truncate">{currentLabel}</span>}
-                <span className="sr-only" role="status" aria-live="polite">
-                    {copied ? copiedLabel : ""}
-                </span>
             </Button>
+            {/* Outside the button: a button's children are presentational, so a live region inside it may not be announced */}
+            <span className="sr-only" role="status" aria-live="polite">
+                {copied ? copiedLabel : ""}
+            </span>
+            </>
         )
     }
 )

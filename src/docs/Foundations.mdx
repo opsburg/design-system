@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { BrandScales, SemanticColors, Shape, TypeScale } from "./Foundations"
+
+<Meta title="Foundations/Tokens" />
+
+# Tokens
+
+Every value below comes from `tokens.json`, published with the package as `@opsburg/design-system/tokens.json`, and from `theme.css`, which turns it into Tailwind utilities.
+
+## Color
+
+Components use the semantic tokens only. Brass `primary` is a fill, never text on the ground: for brass text use `primary-strong`.
+
+<SemanticColors />
+
+## Brand scales
+
+For charts, gauges and illustrations. The outlined step is the brand's own color.
+
+<BrandScales />
+
+## Type
+
+Cinzel for names only, IBM Plex Sans for every sentence, IBM Plex Mono for anything a person might copy. Each style is a `type-*` utility (family included) and a `text-*` utility (size, line height, weight, tracking).
+
+<TypeScale />
+
+## Shape and depth
+
+<Shape />

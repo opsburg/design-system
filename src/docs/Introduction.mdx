@@ -1,0 +1,15 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Introduction" />
+
+<img src="/assets/logo.png" alt="Opsburg" width="96" />
+
+# Opsburg Design System
+
+The React components of Opsburg, on Radix UI and Tailwind CSS v4, in the **Ottone e Notte** palette: brass instruments on a night sky.
+
+- Switch between **Day** and **Night** from the toolbar: every story renders in both.
+- The **Accessibility** panel runs axe on the story you are looking at. In CI every story is checked in both themes, and a violation fails the build (see *Foundations / Accessibility*).
+- Install: `pnpm add @opsburg/design-system`, then in your CSS `@import "tailwindcss"; @import "@opsburg/design-system/theme.css";` and `@source "../node_modules/@opsburg/design-system/dist";`.
+
+Two rules sit above the others: **the game word never hides the real one** ("Boiler House 3 · compute node"), and **brass is for the one thing to do next**.

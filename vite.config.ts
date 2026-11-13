@@ -10,7 +10,9 @@ export default defineConfig({
         dts({
             tsconfigPath: "./tsconfig.json",
             rollupTypes: false,
-            copyDtsFiles: true
+            copyDtsFiles: true,
+            // Stories and the Storybook docs are not part of the published package
+            exclude: ["src/**/*.stories.tsx", "src/docs/**"]
         }),
         {
             name: "copy-theme-css",

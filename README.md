@@ -160,13 +160,28 @@ const MyField = ({ dataTestId, ...props }: MyFieldProps & TestIdProps) => (
 
 ## Accessibility
 
-Components target WCAG 2.1 AA:
+Components target WCAG 2.2 AA, and the system checks itself:
 
-- every interactive control is a native element (`button`, `a`, `input`), reachable by keyboard, with a visible focus ring;
+- **Storybook's Accessibility panel** runs axe on the story you are looking at; switch the toolbar to *Night* to check the dark theme.
+- **`pnpm test:a11y`** opens every story of the built Storybook in Day and Night, runs axe with the WCAG 2.0, 2.1 and 2.2 A/AA rules and exits with an error on any violation. CI runs it on every push. A story with a known, accepted issue carries the tag `skip-a11y`, with the reason in a comment.
+
+Rules for every component:
+
+- every interactive control is a native element (`button`, `a`, `input`) or a Radix primitive, reachable by keyboard, with the `ring-2 ring-ring ring-offset-2` focus;
 - form fields wire label, description and error through `htmlFor`/`id`, `aria-describedby`, `aria-invalid` and `aria-required`; error messages have `role="alert"`;
-- the required asterisk is `aria-hidden` and paired with screen-reader text;
-- decorative icons are `aria-hidden`; icon-only controls require an `aria-label`;
-- every string announced to screen readers can be overridden through props (`label`, `clearLabel`, `closeLabel`, `menuButtonLabel`, `showValueLabel`, `requiredLabel`, …) so the app can localize it.
+- a status is never colour alone: a word sits next to every dot and badge;
+- decorative icons are `aria-hidden`; icon-only controls need an `aria-label`;
+- every string announced to screen readers can be overridden through props (`label`, `clearLabel`, `closeLabel`, …) so the app can localize it.
+
+## Storybook
+
+```sh
+pnpm storybook          # http://localhost:6006
+pnpm build-storybook    # static build in storybook-static/
+pnpm test:a11y          # axe on every story, Day and Night (after build-storybook)
+```
+
+Each component has its stories next to it (`<Component>.stories.tsx`); *Introduction* and *Foundations* (tokens, accessibility) live in `src/docs`. The toolbar switches between the Day and Night themes.
 
 ## Development
 

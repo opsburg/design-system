@@ -188,7 +188,9 @@ export const LogViewer: React.FC<ILogViewerProps> = ({
                     <div
                         ref={outputRef}
                         role="log"
-                        className={cn("max-h-[480px] min-h-[96px] overflow-auto rounded-md bg-muted p-3 font-mono text-xs leading-relaxed whitespace-pre-wrap break-all", placeholder && "opacity-60")}
+                        // Scrolls: it must take keyboard focus so it can be scrolled without a mouse
+                        tabIndex={0}
+                        className={cn("max-h-[480px] min-h-[96px] overflow-auto rounded-md bg-muted p-3 font-mono text-xs leading-relaxed whitespace-pre-wrap break-all")}
                         aria-label={outputLabel}
                         data-testid={testId("output")}
                     >

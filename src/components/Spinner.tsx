@@ -17,7 +17,7 @@ const Spinner = ({ className, size = 24, centerScreen = true, id, dataTestId, la
     const spinner = <Loader2 className={cn("animate-spin", className)} size={size} aria-hidden="true" focusable="false" />
 
     return (
-        <div id={id} data-testid={testId} role="status" aria-live="polite" aria-busy="true" className={centerScreen ? "flex-1 flex items-center justify-center" : "inline-flex"}>
+        <div id={id} data-testid={testId} role="status" aria-live="polite" className={centerScreen ? "flex-1 flex items-center justify-center" : "inline-flex"}>
             {spinner}
             <span className="sr-only">{label}</span>
         </div>

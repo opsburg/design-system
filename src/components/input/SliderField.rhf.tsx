@@ -117,10 +117,9 @@ const SliderField = <T extends FieldValues>({
                         <Slider
                             id={inputId}
                             thumbAriaLabel={label}
-                            aria-invalid={!!error}
-                            aria-describedby={describedBy}
-                            aria-required={isRequired || undefined}
-                            aria-valuetext={format(value)}
+                            // On the thumb (role="slider"), not on the container: a slider has no aria-required,
+                            // the label already says it is required
+                            thumbAriaProps={{ "aria-invalid": !!error, "aria-describedby": describedBy, "aria-valuetext": format(value) }}
                             min={min}
                             max={max}
                             step={step}

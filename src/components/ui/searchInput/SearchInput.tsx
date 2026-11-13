@@ -45,6 +45,7 @@ export const SearchInput = React.forwardRef<HTMLInputElement, ISearchInputProps>
                 {clearable && value.length > 0 && (
                     <Button
                         type="button"
+                        disabled={props.disabled}
                         variant="ghost"
                         size="icon-sm"
                         onClick={onClear}

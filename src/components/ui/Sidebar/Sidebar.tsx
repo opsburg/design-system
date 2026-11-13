@@ -123,7 +123,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(
                     <div className="flex items-center md:p-2 gap-3">
                         {logo ?? (
                             <div className="h-8 w-8 rounded-sm bg-primary flex items-center justify-center text-primary-foreground font-bold" aria-hidden="true">
-                                {!isCollapsed ? "FR" : "F"}
+                                O
                             </div>
                         )}
                         {!isCollapsed && title && <span className="text-lg font-semibold text-foreground">{title}</span>}

@@ -119,7 +119,7 @@ const TextareaChipsField = <T extends FieldValues>({
                                             <button
                                                 type="button"
                                                 onClick={() => removeChip(index)}
-                                                disabled={formState.isSubmitting}
+                                                disabled={formState.isSubmitting || Boolean(props.disabled)}
                                                 aria-label={`${removeChipLabel} ${chip}`}
                                                 data-testid={testId ? `${testId}-remove-${chip}` : undefined}
                                                 className="hover:bg-primary/20 rounded-sm p-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"

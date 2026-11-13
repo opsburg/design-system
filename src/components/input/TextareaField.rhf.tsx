@@ -108,13 +108,12 @@ const TextareaField = <T extends FieldValues>({
                         {secret && (
                             <button
                                 type="button"
-                                tabIndex={-1}
                                 aria-label={isValueVisible ? hideValueLabel : showValueLabel}
                                 aria-pressed={isValueVisible}
                                 aria-controls={inputId}
                                 data-testid={`${testId}-toggle-visibility`}
                                 onClick={() => setIsValueVisible(visible => !visible)}
-                                className="absolute right-3 top-3 rounded-sm text-foreground-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
+                                className="absolute right-2 top-2 inline-flex size-6 items-center justify-center rounded-sm text-foreground-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
                             >
                                 {isValueVisible ? <EyeOff className="h-4 w-4" aria-hidden="true" focusable="false" /> : <Eye className="h-4 w-4" aria-hidden="true" focusable="false" />}
                             </button>

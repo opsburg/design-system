@@ -91,7 +91,6 @@ const CalendarField = <T extends FieldValues>({
                                 aria-haspopup="dialog"
                                 aria-invalid={!!error}
                                 aria-describedby={describedBy}
-                                aria-required={isRequired || undefined}
                                 className={cn("w-full justify-start text-left font-normal", !value && "text-muted-foreground", error && "border-destructive")}
                                 disabled={disabled}
                             >

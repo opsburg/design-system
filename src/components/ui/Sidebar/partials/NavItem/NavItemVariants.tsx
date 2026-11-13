@@ -11,10 +11,10 @@ const baseStyle = `
 	rounded-sm
 	transition-colors
 	border-2
-	hover:border-accent/25
+	hover:border-border
 	focus-visible:outline-none
 	focus-visible:ring-2
-	focus-visible:ring-accent/25
+	focus-visible:ring-ring
 	focus-visible:ring-offset-2
 `
 
@@ -34,7 +34,7 @@ export const navItemVariants = cva(cn(baseStyle, labelStyle), {
             secondary: "text-sm text-foreground-secondary px-3 [&_svg]:size-4"
         },
         active: {
-            true: "border-accent hover:border-accent",
+            true: "border-primary-strong bg-accent text-accent-foreground hover:border-primary-strong",
             false: "border-transparent"
         },
         isSidebarCollapsed: {

@@ -101,7 +101,7 @@ export const ConfirmByTypingDialog: React.FC<IConfirmByTypingDialogProps> = ({
 
     return (
         <Dialog open={open} onOpenChange={handleOpenChange}>
-            <DialogContent id={id} className="max-w-lg w-[calc(100vw-2rem)]" closeLabel={closeLabel} aria-busy={busy || undefined} dataTestId={testId}>
+            <DialogContent id={id} className="max-w-lg w-[calc(100vw-2rem)]" closeLabel={closeLabel} aria-describedby={undefined} aria-busy={busy || undefined} dataTestId={testId}>
                 <DialogHeader className="mb-4">
                     <DialogTitle>{title}</DialogTitle>
                 </DialogHeader>
