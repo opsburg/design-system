@@ -6,7 +6,7 @@ addons.setConfig({
         base: "light",
         brandTitle: "Opsburg Design System",
         brandUrl: "https://github.com/opsburg/design-system",
-        brandImage: "/assets/logo.png",
+        brandImage: "assets/logo.png",
         brandTarget: "_self",
         colorPrimary: "#7E5A0F",
         colorSecondary: "#C9952A",
