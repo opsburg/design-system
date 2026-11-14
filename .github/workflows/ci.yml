@@ -7,6 +7,18 @@ on:
         branches: [main]
 
 jobs:
+    secrets:
+        # Secrets committed anywhere in the history fail the build, redacted in the log. A false positive
+        # goes in .gitleaksignore, by the fingerprint the log prints
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+
+            - name: Gitleaks
+              run: docker run --rm -v "$PWD:/repo" -w /repo ghcr.io/gitleaks/gitleaks:v8.30.1 git --redact --no-banner --verbose .
+
     build:
         runs-on: ubuntu-latest
         steps:

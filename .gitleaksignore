@@ -1,0 +1,4 @@
+# Findings gitleaks may ignore, one fingerprint per line as printed in its log.
+
+# TextField story "Secret": the demo value of a password field, not a real key
+5a125d3a1d87266726de2c095d81aa82a4f028e8:src/components/input/TextField.stories.tsx:generic-api-key:73

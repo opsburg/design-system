@@ -10,7 +10,19 @@ permissions:
     packages: write
 
 jobs:
+    secrets:
+        # A secret committed anywhere in the history blocks the release (see .gitleaksignore)
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+
+            - name: Gitleaks
+              run: docker run --rm -v "$PWD:/repo" -w /repo ghcr.io/gitleaks/gitleaks:v8.30.1 git --redact --no-banner --verbose .
+
     publish:
+        needs: secrets
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v7
